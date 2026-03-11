@@ -1,7 +1,8 @@
-FROM adoptopenjdk/openjdk11-openj9:alpine
+FROM eclipse-temurin:17-jre
 RUN mkdir /opt/app
 RUN mkdir /files
 COPY target/shopizer.jar /opt/app
-COPY SALESMANAGER.h2.db /
-COPY ./files /files
-CMD ["java", "-jar", "/opt/app/shopizer.jar"]
+EXPOSE 8080
+HEALTHCHECK --interval=30s --timeout=3s --start-period=60s --retries=3 \
+  CMD curl -f http://localhost:8080/actuator/health || exit 1
+CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/opt/app/shopizer.jar"]
