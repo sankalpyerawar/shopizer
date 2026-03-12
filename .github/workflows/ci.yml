@@ -28,7 +28,7 @@ jobs:
         run: ./mvnw compile -B
 
       - name: Run tests
-        run: ./mvnw test -B -Dspring.profiles.active=default
+        run: ./mvnw test -B
 
       - name: Upload test reports
         if: always()
