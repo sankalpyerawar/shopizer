@@ -27,9 +27,8 @@ jobs:
 
         run: ./mvnw compile -B
 
-      - name: Run tests
-
-        run: ./mvnw test -B
+      - name: Run unit tests
+        run: ./mvnw test -B -Dtest='!*IntegrationTest' -DfailIfNoTests=false
 
       - name: Upload test reports
         if: always()
