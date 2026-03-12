@@ -27,8 +27,8 @@ jobs:
 
         run: ./mvnw compile -B
 
-      - name: Run unit tests
-        run: ./mvnw test -B -Dtest='!*IntegrationTest' -DfailIfNoTests=false
+      - name: Run tests
+        run: ./mvnw test -B -Dspring.profiles.active=default
 
       - name: Upload test reports
         if: always()
