@@ -91,7 +91,7 @@ jobs:
   package-and-push:
     runs-on: ubuntu-latest
     needs: [code-quality, security-scan]
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/3.2.7'
     permissions:
       contents: read
       packages: write
