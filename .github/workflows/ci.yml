@@ -25,11 +25,11 @@ jobs:
 
       - name: Build
 
-        run: ./mvnw compile --no-transfer-progress
+        run: ./mvnw compile -B
 
       - name: Run tests
 
-        run: ./mvnw test --no-transfer-progress
+        run: ./mvnw test -B
 
       - name: Upload test reports
         if: always()
@@ -53,7 +53,7 @@ jobs:
 
       - name: Code coverage (JaCoCo)
 
-        run: ./mvnw verify -pl sm-shop jacoco:report --no-transfer-progress -DskipITs
+        run: ./mvnw verify -pl sm-shop jacoco:report -B -DskipITs
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
@@ -78,7 +78,7 @@ jobs:
 
         run: |
           ./mvnw org.owasp:dependency-check-maven:check \
-            --no-transfer-progress \
+            -B \
             -DfailBuildOnCVSS=9 \
             -DsuppressionFile=.owasp-suppressions.xml || true
 
@@ -108,7 +108,7 @@ jobs:
 
       - name: Package JAR
 
-        run: ./mvnw package -DskipTests --no-transfer-progress
+        run: ./mvnw package -DskipTests -B
 
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
