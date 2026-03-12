@@ -24,11 +24,11 @@ jobs:
           cache: maven
 
       - name: Build
-        working-directory: shopizer
+
         run: ./mvnw compile --no-transfer-progress
 
       - name: Run tests
-        working-directory: shopizer
+
         run: ./mvnw test --no-transfer-progress
 
       - name: Upload test reports
@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: surefire-reports
-          path: shopizer/**/target/surefire-reports/
+          path: '**/target/surefire-reports/'
 
   code-quality:
     runs-on: ubuntu-latest
@@ -52,14 +52,14 @@ jobs:
           cache: maven
 
       - name: Code coverage (JaCoCo)
-        working-directory: shopizer
+
         run: ./mvnw verify -pl sm-shop jacoco:report --no-transfer-progress -DskipITs
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
           name: jacoco-report
-          path: shopizer/sm-shop/target/site/jacoco/
+          path: sm-shop/target/site/jacoco/
 
   security-scan:
     runs-on: ubuntu-latest
@@ -75,7 +75,7 @@ jobs:
           cache: maven
 
       - name: OWASP Dependency Check
-        working-directory: shopizer
+
         run: |
           ./mvnw org.owasp:dependency-check-maven:check \
             --no-transfer-progress \
@@ -87,7 +87,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: owasp-report
-          path: shopizer/**/target/dependency-check-report.html
+          path: '**/target/dependency-check-report.html'
 
   package-and-push:
     runs-on: ubuntu-latest
@@ -107,14 +107,14 @@ jobs:
           cache: maven
 
       - name: Package JAR
-        working-directory: shopizer
+
         run: ./mvnw package -DskipTests --no-transfer-progress
 
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
           name: shopizer-jar
-          path: shopizer/sm-shop/target/shopizer.jar
+          path: sm-shop/target/shopizer.jar
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
@@ -135,7 +135,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: shopizer/sm-shop
+          context: sm-shop
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
