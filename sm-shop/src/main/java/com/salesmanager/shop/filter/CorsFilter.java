@@ -15,30 +15,25 @@ import org.apache.commons.lang3.StringUtils;
 
 public class CorsFilter implements Filter {
 
-		public CorsFilter() {
-			
+	public CorsFilter() {
+	}
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+		
+		HttpServletRequest httpRequest = (HttpServletRequest) request;
+		HttpServletResponse httpResponse = (HttpServletResponse) response;
+		
+		String origin = "*";
+		if (!StringUtils.isBlank(httpRequest.getHeader("origin"))) {
+			origin = httpRequest.getHeader("origin");
 		}
 
-		/**
-		 * Allows public web services to work from remote hosts
-		 */
-	   public boolean preHandle(
-	            HttpServletRequest request,
-	            HttpServletResponse response,
-	            Object handler) throws Exception {
-		   
-        	HttpServletResponse httpResponse = (HttpServletResponse) response;
-        	
-        	String origin = "*";
-        	if(!StringUtils.isBlank(request.getHeader("origin"))) {
-        		origin = request.getHeader("origin");
-        	}
-	
-	        httpResponse.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE, PATCH");
-        	httpResponse.setHeader("Access-Control-Allow-Headers", "X-Auth-Token, Content-Type, Authorization, Cache-Control, X-Requested-With");
-        	httpResponse.setHeader("Access-Control-Allow-Origin", origin);
-	        
-        	return true;
-			
-		}
+		httpResponse.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE, PATCH");
+		httpResponse.setHeader("Access-Control-Allow-Headers", "X-Auth-Token, Content-Type, Authorization, Cache-Control, X-Requested-With");
+		httpResponse.setHeader("Access-Control-Allow-Origin", origin);
+		
+		chain.doFilter(request, response);
+	}
 }

@@ -89,7 +89,7 @@ public class ShopApplicationConfiguration implements WebMvcConfigurer {
      **/
 
     registry
-        .addInterceptor(corsFilter())
+        .addInterceptor(corsInterceptor())
         // public services cors filter
         .addPathPatterns("/services/**")
         // REST api
@@ -117,8 +117,22 @@ public class ShopApplicationConfiguration implements WebMvcConfigurer {
 	 */
 
   @Bean
-  public CorsFilter corsFilter() {
-    return new CorsFilter();
+  public org.springframework.web.servlet.HandlerInterceptor corsInterceptor() {
+    return new org.springframework.web.servlet.HandlerInterceptor() {
+      @Override
+      public boolean preHandle(jakarta.servlet.http.HttpServletRequest request,
+                               jakarta.servlet.http.HttpServletResponse response,
+                               Object handler) throws Exception {
+        String origin = "*";
+        if (org.apache.commons.lang3.StringUtils.isNotBlank(request.getHeader("origin"))) {
+          origin = request.getHeader("origin");
+        }
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE, PATCH");
+        response.setHeader("Access-Control-Allow-Headers", "X-Auth-Token, Content-Type, Authorization, Cache-Control, X-Requested-With");
+        response.setHeader("Access-Control-Allow-Origin", origin);
+        return true;
+      }
+    };
   }
 
 
