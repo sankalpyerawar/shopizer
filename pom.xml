@@ -20,7 +20,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.18</version>
+		<version>3.2.3</version>
 	</parent>
 
 	<modules>
@@ -362,9 +362,9 @@
 			</dependency>
 
 			<dependency>
-				<groupId>javax.annotation</groupId>
-				<artifactId>javax.annotation-api</artifactId>
-				<version>${javax.annotation}</version>
+				<groupId>jakarta.annotation</groupId>
+				<artifactId>jakarta.annotation-api</artifactId>
+				<version>3.0.0</version>
 			</dependency>
 
 		</dependencies>
@@ -377,11 +377,6 @@
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
@@ -408,17 +403,13 @@
 			<artifactId>jackson-annotations</artifactId>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/net.sf.ehcache/ehcache -->
+		<!-- Caching - Spring Boot 3 uses javax.cache -->
 		<dependency>
-			<groupId>net.sf.ehcache</groupId>
-			<artifactId>ehcache</artifactId>
+			<groupId>javax.cache</groupId>
+			<artifactId>cache-api</artifactId>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>javax.mail-api</artifactId>
-		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 		<dependency>
@@ -551,6 +542,25 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+
+			<!-- OpenRewrite Maven Plugin for automated migration -->
+			<plugin>
+				<groupId>org.openrewrite.maven</groupId>
+				<artifactId>rewrite-maven-plugin</artifactId>
+				<version>5.25.0</version>
+				<configuration>
+					<activeRecipes>
+						<recipe>org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta</recipe>
+					</activeRecipes>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.openrewrite.recipe</groupId>
+						<artifactId>rewrite-migrate-java</artifactId>
+						<version>2.11.0</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 
 			<plugin>
