@@ -21,12 +21,6 @@ logging.level.org.apache.http.wire=ERROR
 logging.level.com.salesmanager=ERROR
 
 #default database schema
-#spring.jpa.properties.hibernate.default_schema=SALESMANAGER
+spring.jpa.properties.hibernate.default_schema=SALESMANAGER
 
 shopizer.test=true
-
-# Override schema for H2 compatibility
-db.schema=
-
-# Disable connection test query for H2
-db.preferredTestQuery=

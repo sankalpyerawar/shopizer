@@ -242,10 +242,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
-		<!-- H2 DB -->
+		<!-- H2 DB - downgraded to 1.4.200 for compatibility -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
+			<version>1.4.200</version>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
