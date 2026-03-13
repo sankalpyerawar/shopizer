@@ -1,3 +1,6 @@
 # Enable auto-env through the sdkman_auto_env config
 # To enable: sdk config
+# Java 17 (current production version)
 java=17.0.17-tem
+# Java 21 (migration target - use: sdk use java 21.0.2-tem)
+# java=21.0.2-tem

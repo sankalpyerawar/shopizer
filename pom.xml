@@ -498,6 +498,18 @@
 		</pluginRepository>
 	</pluginRepositories>
 
+	<profiles>
+		<!-- Java 21 profile for migration testing -->
+		<profile>
+			<id>java21</id>
+			<properties>
+				<java.version>21</java.version>
+				<maven.compiler.source>21</maven.compiler.source>
+				<maven.compiler.target>21</maven.compiler.target>
+			</properties>
+		</profile>
+	</profiles>
+
 	<build>
 		<plugins>
 
@@ -516,6 +528,29 @@
 						<!-- other annotation processors -->
 					</annotationProcessorPaths>
 				</configuration>
+			</plugin>
+
+			<!-- Maven Enforcer Plugin to validate Java version -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.4.1</version>
+				<executions>
+					<execution>
+						<id>enforce-java</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireJavaVersion>
+									<version>[17,)</version>
+									<message>Java 17 or higher is required for this build</message>
+								</requireJavaVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 
 			<plugin>
