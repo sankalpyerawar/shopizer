@@ -57,16 +57,16 @@ public class IndexProductEventListener implements ApplicationListener<ProductEve
 		
 		if(!noIndex) {
 
-			if (event instanceof SaveProductEvent) {
-				saveProduct((SaveProductEvent) event);
+			if (event instanceof SaveProductEvent saveEvent) {
+				saveProduct(saveEvent);
 			}
 	
-			if (event instanceof DeleteProductEvent) {
-				deleteProduct((DeleteProductEvent) event);
+			if (event instanceof DeleteProductEvent deleteEvent) {
+				deleteProduct(deleteEvent);
 			}
 	
-			if (event instanceof SaveProductVariantEvent) {
-				saveProductVariant((SaveProductVariantEvent) event);
+			if (event instanceof SaveProductVariantEvent variantEvent) {
+				saveProductVariant(variantEvent);
 			}
 	
 			if (event instanceof DeleteProductVariantEvent) {

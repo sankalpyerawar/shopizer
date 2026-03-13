@@ -443,8 +443,7 @@ public class Stripe3Payment implements PaymentModule {
 	private IntegrationException buildException(Exception ex) {
 		
 		
-	if(ex instanceof CardException) {
-		  CardException e = (CardException)ex;
+	if(ex instanceof CardException e) {
 		  // Since it's a decline, CardException will be caught
 		  //System.out.println("Status is: " + e.getCode());
 		  //System.out.println("Message is: " + e.getMessage());
@@ -542,9 +541,8 @@ public class Stripe3Payment implements PaymentModule {
 		
 
 		  
-	} else if (ex instanceof InvalidRequestException) {
+	} else if (ex instanceof InvalidRequestException e) {
 		LOGGER.error("InvalidRequest error with stripe", ex.getMessage());
-		InvalidRequestException e =(InvalidRequestException)ex;
 		IntegrationException te = new IntegrationException(
 				"Can't process Stripe, missing invalid payment parameters");
 		te.setExceptionType(IntegrationException.TRANSACTION_EXCEPTION);
