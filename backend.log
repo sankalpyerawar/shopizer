@@ -1,0 +1,464 @@
+ _____  _                    _                  
+/  ___|| |                  (_)                 
+\ `--. | |__    ___   _ __   _  ____  ___  _ __ 
+ `--. \| '_ \  / _ \ | '_ \ | ||_  / / _ \| '__|
+/\__/ /| | | || (_) || |_) || | / / |  __/| |   
+\____/ |_| |_| \___/ | .__/ |_|/___| \___||_|   
+                     | |                        
+                     |_|                        
+Shopizer 3.2.5 [based on Spring Boot version 2.5.12]
+
+2026-03-11 14:12:29.370  INFO 39886 --- [           main] c.s.shop.application.ShopApplication     : Starting ShopApplication v3.2.5 using Java 17.0.17 on technogises-MacBook-Pro.local with PID 39886 (/Users/sakalpyerawar/Projects/agentic-workshop/shopizer/sm-shop/target/shopizer.jar started by sakalpyerawar in /Users/sakalpyerawar/Projects/agentic-workshop/shopizer/sm-shop)
+2026-03-11 14:12:29.372  INFO 39886 --- [           main] c.s.shop.application.ShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-03-11 14:12:32.399  INFO 39886 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-11 14:12:32.399  INFO 39886 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2026-03-11 14:12:32.843  INFO 39886 --- [           main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-11 14:12:32.886  INFO 39886 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-11 14:12:33.788  WARN 39886 --- [           main] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2026-03-11 14:12:33.789  INFO 39886 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-11 14:12:34.026  INFO 39886 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-11 14:12:34.377  WARN 39886 --- [           main] n.s.ehcache.config.ConfigurationFactory  : No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/sakalpyerawar/Projects/agentic-workshop/shopizer/sm-shop/target/shopizer.jar!/BOOT-INF/lib/ehcache-2.10.9.2.jar!/ehcache-failsafe.xml
+2026-03-11 14:12:36.621  INFO 39886 --- [           main] c.s.s.a.c.ShopServletContextListener     : ===context init===
+2026-03-11 14:12:37.035  INFO 39886 --- [           main] o.i.factories.GlobalComponentRegistry    : ISPN000128: Infinispan version: Infinispan 'Infinity Minus ONE +2' 9.4.18.Final
+2026-03-11 14:12:37.474  WARN 39886 --- [           main] o.i.t.l.GenericTransactionManagerLookup  : ISPN000104: Falling back to EmbeddedTransactionManager from Infinispan
+2026-03-11 14:12:37.542  INFO 39886 --- [           main] .m.c.c.i.CmsStaticContentFileManagerImpl : init com.salesmanager.core.business.modules.cms.content.infinispan.CmsStaticContentFileManagerImpl setting rootstore-merchant
+2026-03-11 14:12:38.700 ERROR 39886 --- [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Schema "SALESMANAGER" not found; SQL statement:
+select count(*) as col_0_0_ from SALESMANAGER.LANGUAGE language0_ [90079-200]
+2026-03-11 14:12:38.711 ERROR 39886 --- [           main] c.s.shop.init.data.InitializationLoader  : Error in the init method
+
+org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [select count(*) as col_0_0_ from SALESMANAGER.LANGUAGE language0_]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:259) ~[spring-orm-5.3.18.jar!/:5.3.18]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233) ~[spring-orm-5.3.18.jar!/:5.3.18]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551) ~[spring-orm-5.3.18.jar!/:5.3.18]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.5.10.jar!/:2.5.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at jdk.proxy2/jdk.proxy2.$Proxy201.count(Unknown Source) ~[na:na]
+	at com.salesmanager.core.business.services.common.generic.SalesManagerEntityServiceImpl.count(SalesManagerEntityServiceImpl.java:80) ~[sm-core-3.2.5.jar!/:3.2.5]
+	at com.salesmanager.core.business.services.common.generic.SalesManagerEntityServiceImpl$$FastClassBySpringCGLIB$$281f4668.invoke(<generated>) ~[sm-core-3.2.5.jar!/:3.2.5]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at com.salesmanager.core.business.services.reference.language.LanguageServiceImpl$$EnhancerBySpringCGLIB$$3a9ba02.count(<generated>) ~[sm-core-3.2.5.jar!/:3.2.5]
+	at com.salesmanager.core.business.services.reference.init.InitializationDatabaseImpl.isEmpty(InitializationDatabaseImpl.java:100) ~[sm-core-3.2.5.jar!/:3.2.5]
+	at com.salesmanager.core.business.services.reference.init.InitializationDatabaseImpl$$FastClassBySpringCGLIB$$217b8725.invoke(<generated>) ~[sm-core-3.2.5.jar!/:3.2.5]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at com.salesmanager.core.business.services.reference.init.InitializationDatabaseImpl$$EnhancerBySpringCGLIB$$ceee1468.isEmpty(<generated>) ~[sm-core-3.2.5.jar!/:3.2.5]
+	at com.salesmanager.shop.init.data.InitializationLoader.init(InitializationLoader.java:75) ~[classes!/:3.2.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at com.salesmanager.shop.application.ShopApplication.main(ShopApplication.java:12) ~[classes!/:3.2.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[shopizer.jar:3.2.5]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[shopizer.jar:3.2.5]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[shopizer.jar:3.2.5]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[shopizer.jar:3.2.5]
+Caused by: org.hibernate.exception.SQLGrammarException: could not prepare statement
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:63) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:186) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:151) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:2097) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2034) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2012) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:948) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:349) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.doList(Loader.java:2843) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.doList(Loader.java:2825) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2657) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.list(Loader.java:2652) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:506) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:219) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1414) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1636) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1604) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1652) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.count(SimpleJpaRepository.java:585) ~[spring-data-jpa-2.5.10.jar!/:2.5.10]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:529) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:600) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:163) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	... 68 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Schema "SALESMANAGER" not found; SQL statement:
+select count(*) as col_0_0_ from SALESMANAGER.LANGUAGE language0_ [90079-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576) ~[h2-1.4.200.jar!/:na]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429) ~[h2-1.4.200.jar!/:na]
+	at org.h2.message.DbException.get(DbException.java:205) ~[h2-1.4.200.jar!/:na]
+	at org.h2.message.DbException.get(DbException.java:181) ~[h2-1.4.200.jar!/:na]
+	at org.h2.command.Parser.readTableFilter(Parser.java:1940) ~[h2-1.4.200.jar!/:na]
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:2827) ~[h2-1.4.200.jar!/:na]
+	at org.h2.command.Parser.parseSelect(Parser.java:2959) ~[h2-1.4.200.jar!/:na]
+	at org.h2.command.Parser.parseQuerySub(Parser.java:2817) ~[h2-1.4.200.jar!/:na]
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2649) ~[h2-1.4.200.jar!/:na]
+	at org.h2.command.Parser.parseQuery(Parser.java:2620) ~[h2-1.4.200.jar!/:na]
+	at org.h2.command.Parser.parsePrepared(Parser.java:868) ~[h2-1.4.200.jar!/:na]
+	at org.h2.command.Parser.parse(Parser.java:843) ~[h2-1.4.200.jar!/:na]
+	at org.h2.command.Parser.parse(Parser.java:815) ~[h2-1.4.200.jar!/:na]
+	at org.h2.command.Parser.prepareCommand(Parser.java:738) ~[h2-1.4.200.jar!/:na]
+	at org.h2.engine.Session.prepareLocal(Session.java:657) ~[h2-1.4.200.jar!/:na]
+	at org.h2.engine.Session.prepareCommand(Session.java:595) ~[h2-1.4.200.jar!/:na]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235) ~[h2-1.4.200.jar!/:na]
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:76) ~[h2-1.4.200.jar!/:na]
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:352) ~[h2-1.4.200.jar!/:na]
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:337) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java) ~[HikariCP-4.0.3.jar!/:na]
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:149) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:176) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	... 107 common frames omitted
+
+2026-03-11 14:12:39.236  INFO 39886 --- [           main] c.s.c.b.m.c.p.i.CmsImageFileManagerImpl  : init com.salesmanager.core.business.modules.cms.product.infinispan.CmsImageFileManagerImpl setting rootproduct-merchant
+2026-03-11 14:12:39.725  INFO 39886 --- [           main] c.s.m.s.c.a.CanadaPostAutoConfiguration  : instantiate [CanadaPostQuoteModule]
+2026-03-11 14:12:39.726  INFO 39886 --- [           main] c.s.m.s.c.a.CanadaPostAutoConfiguration  : autoconfigure [com.shopizer.modules.shipping.canadapost.autoconfigure.CanadaPostAutoConfiguration$$EnhancerBySpringCGLIB$$1f417cd5]
+2026-03-11 14:12:40.031 ERROR 39886 --- [           main] c.s.shop.controller.ImagesController     : Can't load temporary default image
+
+java.io.FileNotFoundException: class path resource [static/not-found.png] cannot be resolved to absolute file path because it does not reside in the file system: jar:file:/Users/sakalpyerawar/Projects/agentic-workshop/shopizer/sm-shop/target/shopizer.jar!/BOOT-INF/classes!/static/not-found.png
+	at org.springframework.util.ResourceUtils.getFile(ResourceUtils.java:217) ~[spring-core-5.3.18.jar!/:5.3.18]
+	at org.springframework.util.ResourceUtils.getFile(ResourceUtils.java:180) ~[spring-core-5.3.18.jar!/:5.3.18]
+	at com.salesmanager.shop.controller.ImagesController.init(ImagesController.java:50) ~[classes!/:3.2.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at com.salesmanager.shop.application.ShopApplication.main(ShopApplication.java:12) ~[classes!/:3.2.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[shopizer.jar:3.2.5]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[shopizer.jar:3.2.5]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[shopizer.jar:3.2.5]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[shopizer.jar:3.2.5]
+
+2026-03-11 14:12:40.317  INFO 39886 --- [           main] .m.c.c.i.CmsStaticContentFileManagerImpl : init com.salesmanager.core.business.modules.cms.content.infinispan.CmsStaticContentFileManagerImpl setting rootproduct-file
+2026-03-11 14:12:40.459  INFO 39886 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2026-03-11 14:12:40.682  INFO 39886 --- [           main] c.s.c.b.m.c.p.l.CmsImageFileManagerImpl  : init com.salesmanager.core.business.modules.cms.product.local.CmsImageFileManagerImpl setting root
+2026-03-11 14:12:40.691  INFO 39886 --- [           main] .m.c.c.l.CmsStaticContentFileManagerImpl : init com.salesmanager.core.business.modules.cms.content.local.CmsStaticContentFileManagerImpl setting root
+2026-03-11 14:12:40.692  INFO 39886 --- [           main] .m.c.c.l.CmsStaticContentFileManagerImpl : init com.salesmanager.core.business.modules.cms.content.local.CmsStaticContentFileManagerImpl setting root
+2026-03-11 14:12:41.272  INFO 39886 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2026-03-11 14:12:41.288  INFO 39886 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2026-03-11 14:12:41.371  INFO 39886 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2026-03-11 14:12:41.529  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: authenticateUsingPOST_1
+2026-03-11 14:12:41.597  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_1
+2026-03-11 14:12:41.603  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_1
+2026-03-11 14:12:41.607  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_1
+2026-03-11 14:12:41.615  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_2
+2026-03-11 14:12:41.624  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: boxesUsingGET_1
+2026-03-11 14:12:41.641  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: pagesUsingGET_1
+2026-03-11 14:12:41.646  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updatePageUsingPUT_1
+2026-03-11 14:12:41.647  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: uploadUsingPOST_1
+2026-03-11 14:12:41.656  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_2
+2026-03-11 14:12:41.656  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_1
+2026-03-11 14:12:41.657  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
+2026-03-11 14:12:41.658  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2026-03-11 14:12:41.659  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAuthUserUsingGET_1
+2026-03-11 14:12:41.660  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_3
+2026-03-11 14:12:41.665  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_1
+2026-03-11 14:12:41.667  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_3
+2026-03-11 14:12:41.668  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_3
+2026-03-11 14:12:41.669  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_2
+2026-03-11 14:12:41.673  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_4
+2026-03-11 14:12:41.674  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_4
+2026-03-11 14:12:41.677  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_3
+2026-03-11 14:12:41.685  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_5
+2026-03-11 14:12:41.686  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_5
+2026-03-11 14:12:41.687  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_2
+2026-03-11 14:12:41.687  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_3
+2026-03-11 14:12:41.688  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_2
+2026-03-11 14:12:41.691  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_4
+2026-03-11 14:12:41.692  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_5
+2026-03-11 14:12:41.698  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_4
+2026-03-11 14:12:41.700  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_6
+2026-03-11 14:12:41.735  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: checkoutUsingPOST_1
+2026-03-11 14:12:41.743  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_3
+2026-03-11 14:12:41.749  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_6
+2026-03-11 14:12:41.751  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_7
+2026-03-11 14:12:41.753  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_8
+2026-03-11 14:12:41.757  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: initUsingPOST_1
+2026-03-11 14:12:41.766  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_7
+2026-03-11 14:12:41.767  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_9
+2026-03-11 14:12:41.772  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: changeProductOrderUsingPOST_1
+2026-03-11 14:12:41.790  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_8
+2026-03-11 14:12:41.790  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_9
+2026-03-11 14:12:41.791  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_6
+2026-03-11 14:12:41.791  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_7
+2026-03-11 14:12:41.792  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_4
+2026-03-11 14:12:41.794  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByfriendlyUrlUsingGET_1
+2026-03-11 14:12:41.794  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByfriendlyUrlUsingGET_2
+2026-03-11 14:12:41.798  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_10
+2026-03-11 14:12:41.807  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_5
+2026-03-11 14:12:41.808  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_6
+2026-03-11 14:12:41.809  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPATCH_1
+2026-03-11 14:12:41.811  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_10
+2026-03-11 14:12:41.814  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_4
+2026-03-11 14:12:41.815  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByfriendlyUrlUsingGET_3
+2026-03-11 14:12:41.815  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByfriendlyUrlUsingGET_4
+2026-03-11 14:12:41.819  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_11
+2026-03-11 14:12:41.830  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_12
+2026-03-11 14:12:41.831  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPATCH_2
+2026-03-11 14:12:41.851  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_13
+2026-03-11 14:12:41.853  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteImageUsingDELETE_1
+2026-03-11 14:12:41.857  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteImageUsingDELETE_2
+2026-03-11 14:12:41.858  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: imageDetailsUsingPATCH_1
+2026-03-11 14:12:41.858  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: imagesUsingGET_1
+2026-03-11 14:12:41.860  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: uploadImageUsingPOST_1
+2026-03-11 14:12:41.863  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_11
+2026-03-11 14:12:41.863  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_8
+2026-03-11 14:12:41.865  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_7
+2026-03-11 14:12:41.867  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_12
+2026-03-11 14:12:41.867  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_9
+2026-03-11 14:12:41.868  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_5
+2026-03-11 14:12:41.868  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_5
+2026-03-11 14:12:41.869  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_14
+2026-03-11 14:12:41.870  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_15
+2026-03-11 14:12:41.871  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_8
+2026-03-11 14:12:41.872  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_10
+2026-03-11 14:12:41.873  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_6
+2026-03-11 14:12:41.874  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_16
+2026-03-11 14:12:41.874  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_17
+2026-03-11 14:12:41.876  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2026-03-11 14:12:41.877  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_13
+2026-03-11 14:12:41.878  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_11
+2026-03-11 14:12:41.878  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_6
+2026-03-11 14:12:41.879  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_7
+2026-03-11 14:12:41.880  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_18
+2026-03-11 14:12:41.881  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_9
+2026-03-11 14:12:41.884  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsingGET_1
+2026-03-11 14:12:41.885  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_14
+2026-03-11 14:12:41.886  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_15
+2026-03-11 14:12:41.886  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_12
+2026-03-11 14:12:41.886  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_13
+2026-03-11 14:12:41.888  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsingGET_2
+2026-03-11 14:12:41.888  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_10
+2026-03-11 14:12:41.889  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_11
+2026-03-11 14:12:41.890  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_16
+2026-03-11 14:12:41.891  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_14
+2026-03-11 14:12:41.891  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_7
+2026-03-11 14:12:41.891  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_8
+2026-03-11 14:12:41.892  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_19
+2026-03-11 14:12:41.893  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_12
+2026-03-11 14:12:41.894  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_17
+2026-03-11 14:12:41.895  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_15
+2026-03-11 14:12:41.895  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_8
+2026-03-11 14:12:41.897  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_9
+2026-03-11 14:12:41.899  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_20
+2026-03-11 14:12:41.899  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_13
+2026-03-11 14:12:41.901  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_18
+2026-03-11 14:12:41.901  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_16
+2026-03-11 14:12:41.903  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_10
+2026-03-11 14:12:41.904  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_21
+2026-03-11 14:12:41.905  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_14
+2026-03-11 14:12:41.909  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_19
+2026-03-11 14:12:41.910  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_17
+2026-03-11 14:12:41.910  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_9
+2026-03-11 14:12:41.911  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_11
+2026-03-11 14:12:41.912  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_22
+2026-03-11 14:12:41.912  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_15
+2026-03-11 14:12:41.917  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: changePasswordUsingPOST_1
+2026-03-11 14:12:41.919  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: changePasswordUsingPOST_2
+2026-03-11 14:12:41.920  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: passwordResetRequestUsingPOST_1
+2026-03-11 14:12:41.921  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: passwordResetVerifyUsingGET_1
+2026-03-11 14:12:41.924  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: contactUsingPOST_1
+2026-03-11 14:12:41.925  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: configureUsingPOST_1
+2026-03-11 14:12:41.933  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getCountryUsingGET_1
+2026-03-11 14:12:41.943  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addToCartUsingPOST_1
+2026-03-11 14:12:41.947  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByCustomerUsingGET_1
+2026-03-11 14:12:41.949  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: modifyCartUsingPOST_1
+2026-03-11 14:12:41.952  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_20
+2026-03-11 14:12:41.953  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_18
+2026-03-11 14:12:41.953  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_10
+2026-03-11 14:12:41.954  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_12
+2026-03-11 14:12:41.955  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_23
+2026-03-11 14:12:41.955  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_16
+2026-03-11 14:12:41.957  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_21
+2026-03-11 14:12:41.957  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_19
+2026-03-11 14:12:41.957  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_11
+2026-03-11 14:12:41.958  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_13
+2026-03-11 14:12:41.959  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_24
+2026-03-11 14:12:41.959  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_17
+2026-03-11 14:12:41.961  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_22
+2026-03-11 14:12:41.962  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_20
+2026-03-11 14:12:41.963  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_14
+2026-03-11 14:12:41.963  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAuthUserUsingGET_2
+2026-03-11 14:12:41.964  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_25
+2026-03-11 14:12:41.965  INFO 39886 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_18
+2026-03-11 14:12:41.979  INFO 39886 --- [           main] c.s.shop.application.ShopApplication     : Started ShopApplication in 13.066 seconds (JVM running for 13.561)
+2026-03-11 14:12:41.982  INFO 39886 --- [TaskExecutor-51] uration$$EnhancerBySpringCGLIB$$8e499d39 : Current working directory : /Users/sakalpyerawar/Projects/agentic-workshop/shopizer/sm-shop
+2026-03-11 14:13:44.692  INFO 39886 --- [ionShutdownHook] c.s.s.a.c.ShopServletContextListener     : ===context destroy===
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CATALOG CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CATALOG_ENTRY CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CATEGORY CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CATEGORY_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CONTENT CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CONTENT_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.COUNTRY CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.COUNTRY_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CURRENCY CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CUSTOMER CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CUSTOMER_ATTRIBUTE CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CUSTOMER_GROUP CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CUSTOMER_OPT_VAL_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CUSTOMER_OPTIN CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CUSTOMER_OPTION CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CUSTOMER_OPTION_DESC CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CUSTOMER_OPTION_SET CASCADE 
+2026-03-11 14:13:44.758 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CUSTOMER_OPTION_VALUE CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CUSTOMER_REVIEW CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.CUSTOMER_REVIEW_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.FILE_HISTORY CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.GEOZONE CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.GEOZONE_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.LANGUAGE CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.MANUFACTURER CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.MANUFACTURER_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.MERCHANT_CONFIGURATION CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.MERCHANT_LANGUAGE CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.MERCHANT_LOG CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.MERCHANT_STORE CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.MODULE_CONFIGURATION CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.OPTIN CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.ORDER_ACCOUNT CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.ORDER_ACCOUNT_PRODUCT CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.ORDER_ATTRIBUTE CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.ORDER_PRODUCT CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.ORDER_PRODUCT_ATTRIBUTE CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.ORDER_PRODUCT_DOWNLOAD CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.ORDER_PRODUCT_PRICE CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.ORDER_STATUS_HISTORY CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.ORDER_TOTAL CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.ORDERS CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PERMISSION CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PERMISSION_GROUP CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_ATTRIBUTE CASCADE 
+2026-03-11 14:13:44.759 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_AVAILABILITY CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_CATEGORY CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_DIGITAL CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_IMAGE CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_IMAGE_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_OPT_SET_OPT_VALUE CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_OPT_SET_PRD_TYPE CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_OPTION CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_OPTION_DESC CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_OPTION_SET CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_OPTION_VALUE CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_OPTION_VALUE_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_PRICE CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_PRICE_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_RELATIONSHIP CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_REVIEW CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_REVIEW_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_TYPE CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_TYPE_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_VAR_IMAGE CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_VAR_IMAGE_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_VARIANT CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_VARIANT_GROUP CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.PRODUCT_VARIATION CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.SHIPING_ORIGIN CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.SHIPPING_QUOTE CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.SHOPPING_CART CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.SHOPPING_CART_ATTR_ITEM CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.SHOPPING_CART_ITEM CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.SM_GROUP CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.SM_SEQUENCER CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.SM_TRANSACTION CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.SYSTEM_CONFIGURATION CASCADE 
+2026-03-11 14:13:44.760 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.SYSTEM_NOTIFICATION CASCADE 
+2026-03-11 14:13:44.761 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.TAX_CLASS CASCADE 
+2026-03-11 14:13:44.761 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.TAX_RATE CASCADE 
+2026-03-11 14:13:44.761 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.TAX_RATE_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.761 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.USER_GROUP CASCADE 
+2026-03-11 14:13:44.761 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.UserConnection CASCADE 
+2026-03-11 14:13:44.761 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.USERS CASCADE 
+2026-03-11 14:13:44.761 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.ZONE CASCADE 
+2026-03-11 14:13:44.761 ERROR 39886 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table if exists SALESMANAGER.ZONE_DESCRIPTION CASCADE 
+2026-03-11 14:13:44.763  INFO 39886 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-11 14:13:44.763  INFO 39886 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
