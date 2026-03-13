@@ -73,7 +73,7 @@ public class IntegrationModulesLoader {
 	    	if(object.get("customModule")!=null) {
 	    		Object o = object.get("customModule");
 	    		Boolean b = false;
-	    		if(o instanceof Boolean) {
+	    		if(o instanceof Boolean bool) {
 	    			b = (Boolean)object.get("customModule");
 	    		} else {
 	    			try {

@@ -411,8 +411,8 @@ public class BeanStreamPayment implements PaymentModule {
 			
 			
 		} catch(Exception e) {
-			if(e instanceof IntegrationException) {
-				throw (IntegrationException)e;
+			if(e instanceof IntegrationException ex) {
+    throw ex;
 			}
 			
 			throw new IntegrationException("Error while processing BeanStream transaction",e);

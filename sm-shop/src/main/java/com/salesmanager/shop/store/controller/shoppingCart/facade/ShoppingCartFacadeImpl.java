@@ -771,8 +771,8 @@ public class ShoppingCartFacadeImpl implements ShoppingCartFacade {
 		try {
 			return readableShoppingCart(cartModel, item, store, language);
 		} catch (Exception e) {
-			if (e instanceof ResourceNotFoundException) {
-				throw (ResourceNotFoundException) e;
+			if(e instanceof ResourceNotFoundException ex) {
+    throw ex;
 			} else {
 				throw new ServiceRuntimeException(e.getMessage(),e);
 			}

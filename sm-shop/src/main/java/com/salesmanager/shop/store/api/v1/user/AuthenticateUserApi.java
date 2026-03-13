@@ -81,7 +81,7 @@ public class AuthenticateUserApi {
                 );
 
     	} catch(Exception e) {
-    		if(e instanceof BadCredentialsException) {
+    		if(e instanceof BadCredentialsException badCreds) {
     			return new ResponseEntity<>("{\"message\":\"Bad credentials\"}",HttpStatus.UNAUTHORIZED);
     		}
     		LOGGER.error("Error during authentication " + e.getMessage());

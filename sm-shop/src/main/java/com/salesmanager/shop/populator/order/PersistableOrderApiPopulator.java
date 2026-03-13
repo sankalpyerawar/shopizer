@@ -102,8 +102,8 @@ public class PersistableOrderApiPopulator extends AbstractDataPopulator<Persista
 			  target.setCustomerId(customerId);
 			
 			} else {
-			  if(source instanceof PersistableAnonymousOrder) {
-			    PersistableCustomer persistableCustomer = ((PersistableAnonymousOrder)source).getCustomer();
+			  if(source instanceof PersistableAnonymousOrder anon) {
+			    PersistableCustomer persistableCustomer = anon.getCustomer();
 			    customer = new Customer();
 			    customer = customerPopulator.populate(persistableCustomer, customer, store, language);
 			  } else {
