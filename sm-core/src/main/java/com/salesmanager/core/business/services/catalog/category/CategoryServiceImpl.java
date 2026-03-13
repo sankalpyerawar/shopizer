@@ -9,6 +9,7 @@ import java.util.Set;
 
 import jakarta.inject.Inject;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -35,6 +36,7 @@ public class CategoryServiceImpl extends SalesManagerEntityServiceImpl<Long, Cat
   private CategoryRepository categoryRepository;
 
   @Inject
+  @Lazy
   private ProductService productService;
   
   @Inject
