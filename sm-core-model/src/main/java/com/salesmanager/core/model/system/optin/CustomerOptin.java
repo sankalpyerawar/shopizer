@@ -18,7 +18,6 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
 
-import org.hibernate.annotations.Type;
 
 import com.salesmanager.core.constants.SchemaConstant;
 import com.salesmanager.core.model.common.audit.AuditListener;
@@ -63,17 +62,17 @@ public class CustomerOptin extends SalesManagerEntity<Long, CustomerOptin> imple
 	@JoinColumn(name="MERCHANT_ID", nullable=false)
 	private MerchantStore merchantStore;
 	
-	@Column(name="FIRST")
+	@Column(name="FIRST", columnDefinition = "TEXT")
 	private String firstName;
 	
-	@Column(name="LAST")
+	@Column(name="LAST", columnDefinition = "TEXT")
 	private String lastName;
 	
 	@Column(name="EMAIL", nullable=false)
 	private String email;
 	
-	@Column(name="VALUE")
-	@Type(type = "org.hibernate.type.TextType")
+	@Column(name="VALUE", columnDefinition = "TEXT")
+	
 	private String value;
 
 	@Override

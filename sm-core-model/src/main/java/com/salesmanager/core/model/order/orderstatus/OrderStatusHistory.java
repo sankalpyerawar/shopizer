@@ -17,7 +17,6 @@ import jakarta.persistence.TableGenerator;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
-import org.hibernate.annotations.Type;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.salesmanager.core.constants.SchemaConstant;
@@ -52,7 +51,7 @@ public class OrderStatusHistory implements Serializable {
 	private java.lang.Integer customerNotified;
 	
 	@Column(name = "COMMENTS")
-	@Type(type = "org.hibernate.type.TextType")
+	
 	private String comments;
 	
 	public OrderStatusHistory() {

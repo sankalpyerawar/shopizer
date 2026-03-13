@@ -51,30 +51,11 @@ public class CacheUtils {
 	
 	public List<String> getCacheKeys(MerchantStore store) throws Exception {
 		
-		  net.sf.ehcache.Cache cacheImpl = (net.sf.ehcache.Cache) cache.getNativeCache();
+		  // TODO: Implement with Spring Boot 3 cache abstraction
+		  // ehcache-specific API removed in Hibernate 6
 		  List<String> returnKeys = new ArrayList<String>();
-		  for (Object key: cacheImpl.getKeys()) {
-		    
-			  
-				try {
-					String sKey = (String)key;
-					
-					// a key should be <storeId>_<rest of the key>
-					int delimiterPosition = sKey.indexOf(KEY_DELIMITER);
-					
-					if(delimiterPosition>0 && Character.isDigit(sKey.charAt(0))) {
-					
-						String keyRemaining = sKey.substring(delimiterPosition+1);
-						returnKeys.add(keyRemaining);
-					
-					}
-
-				} catch (Exception e) {
-					LOGGER.equals("key " + key + " cannot be converted to a String or parsed");
-				}  
-		  }
-
-		return returnKeys;
+		  LOGGER.warn("getCacheKeys not fully implemented for Spring Boot 3");
+		  return returnKeys;
 	}
 	
 	public void shutDownCache() throws Exception {
@@ -86,27 +67,11 @@ public class CacheUtils {
 	}
 	
 	public void removeAllFromCache(MerchantStore store) throws Exception {
-		  net.sf.ehcache.Cache cacheImpl = (net.sf.ehcache.Cache) cache.getNativeCache();
-		  for (Object key: cacheImpl.getKeys()) {
-				try {
-					String sKey = (String)key;
-					
-					// a key should be <storeId>_<rest of the key>
-					int delimiterPosition = sKey.indexOf(KEY_DELIMITER);
-					
-					if(delimiterPosition>0 && Character.isDigit(sKey.charAt(0))) {
-					
-
-						cache.evict(key);
-					
-					}
-
-				} catch (Exception e) {
-					LOGGER.equals("key " + key + " cannot be converted to a String or parsed");
-				}  
-		  }
+		  // TODO: Implement with Spring Boot 3 cache abstraction
+		  // ehcache-specific API removed in Hibernate 6
+		  LOGGER.warn("removeAllFromCache not fully implemented for Spring Boot 3");
+		  cache.clear();
 	}
-	
 
 
 }

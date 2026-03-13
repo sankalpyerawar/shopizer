@@ -24,7 +24,6 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.persistence.Transient;
 
-import org.hibernate.annotations.Type;
 import org.json.simple.JSONAware;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,23 +63,23 @@ public class Transaction extends SalesManagerEntity<Long, Transaction> implement
 	@JoinColumn(name="ORDER_ID", nullable=true)
 	private Order order;
 	
-	@Column(name="AMOUNT")
+	@Column(name="AMOUNT", columnDefinition = "TEXT")
 	private BigDecimal amount;
 	
-	@Column(name="TRANSACTION_DATE")
+	@Column(name="TRANSACTION_DATE", columnDefinition = "TEXT")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date transactionDate;
 	
-	@Column(name="TRANSACTION_TYPE")
+	@Column(name="TRANSACTION_TYPE", columnDefinition = "TEXT")
 	@Enumerated(value = EnumType.STRING)
 	private TransactionType transactionType;
 	
-	@Column(name="PAYMENT_TYPE")
+	@Column(name="PAYMENT_TYPE", columnDefinition = "TEXT")
 	@Enumerated(value = EnumType.STRING)
 	private PaymentType paymentType;
 	
-	@Column(name="DETAILS")
-	@Type(type = "org.hibernate.type.TextType")
+	@Column(name="DETAILS", columnDefinition = "TEXT")
+	
 	private String details;
 	
 	@Transient
