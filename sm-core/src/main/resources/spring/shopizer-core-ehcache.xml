@@ -15,7 +15,7 @@
 
 	<bean id="springCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
 		<property name="configLocation" value="classpath:/spring/ehcache.xml" />
-		<property name="shared" value="false" />
+		<property name="shared" value="true" />
 	</bean>
 
 	<bean id="serviceCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">

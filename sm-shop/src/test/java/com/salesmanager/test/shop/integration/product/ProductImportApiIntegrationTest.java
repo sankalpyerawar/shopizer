@@ -26,8 +26,7 @@ import com.salesmanager.shop.model.catalog.product.importt.ProductImportRow;
 import com.salesmanager.shop.model.catalog.product.importt.ValidationError;
 import com.salesmanager.test.shop.common.ServicesTestSupport;
 
-@SpringBootTest(classes = ShopApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT,
-        properties = "spring.profiles.active=default")
+@SpringBootTest(classes = ShopApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
 public class ProductImportApiIntegrationTest extends ServicesTestSupport {
 
