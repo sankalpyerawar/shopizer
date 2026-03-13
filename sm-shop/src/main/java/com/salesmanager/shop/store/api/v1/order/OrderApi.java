@@ -455,13 +455,13 @@ public class OrderApi {
 
 
 		} catch (Exception e) {
-			if(e instanceof CredentialsException) {
-				throw new GenericRuntimeException("412","Credentials creation Failed [" + e.getMessage() + "]");
+			if(e instanceof CredentialsException credEx) {
+				throw new GenericRuntimeException("412","Credentials creation Failed [" + credEx.getMessage() + "]");
 			}
 			String message = e.getMessage();
 			if(StringUtils.isBlank(message)) {//exception type
 				message = "APP-BACKEND";
-				if(e.getCause() instanceof com.salesmanager.core.modules.integration.IntegrationException) {
+				if(e.getCause() instanceof com.salesmanager.core.modules.integration.IntegrationException intEx) {
 					message = "Integration problen occured to complete order";
 				}
 			}

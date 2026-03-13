@@ -32,8 +32,7 @@ public class PersistableAuditAspect {
         public void afterReturning(JoinPoint joinPoint, Object result) {
     	
 			try {
-				if(result instanceof Auditable) {
-					Auditable entity = (Auditable)result;
+				if(result instanceof Auditable entity) {
 					AuditSection audit = entity.getAuditSection();
 					if(entity.getAuditSection()==null) {
 						audit = new AuditSection();
@@ -42,8 +41,8 @@ public class PersistableAuditAspect {
 					
 					Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 					if(auth!=null) {
-						if(auth instanceof UsernamePasswordAuthenticationToken) {//api only is captured
-							com.salesmanager.shop.store.security.user.JWTUser user = (com.salesmanager.shop.store.security.user.JWTUser)auth.getPrincipal();
+						if(auth instanceof UsernamePasswordAuthenticationToken token) {//api only is captured
+							com.salesmanager.shop.store.security.user.JWTUser user = (com.salesmanager.shop.store.security.user.JWTUser)token.getPrincipal();
 							audit.setModifiedBy(user.getUsername());
 						}
 					}
