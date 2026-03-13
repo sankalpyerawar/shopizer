@@ -26,6 +26,7 @@ public class ProductReviewServiceImpl extends
 	private ProductReviewRepository productReviewRepository;
 	
 	@Inject
+	@org.springframework.context.annotation.Lazy
 	private ProductService productService;
 	
 	@Inject
