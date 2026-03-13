@@ -1,0 +1,51 @@
+# Java 21 GC Optimization Configuration
+# This file contains recommended JVM flags for Java 21 deployment
+
+## ZGC (Z Garbage Collector) - Recommended for Java 21
+## Low latency, scalable GC with sub-millisecond pause times
+## Uncomment to enable:
+# -XX:+UseZGC
+# -XX:ZCollectionInterval=5
+# -XX:ZAllocationSpikeTolerance=2
+# -Xlog:gc*:file=logs/gc.log:time,uptime,level,tags
+
+## G1GC (Default) - Optimized settings for Java 21
+## Good balance between throughput and latency
+-XX:+UseG1GC
+-XX:MaxGCPauseMillis=200
+-XX:G1HeapRegionSize=16M
+-XX:InitiatingHeapOccupancyPercent=45
+-XX:G1ReservePercent=10
+-XX:G1NewSizePercent=30
+
+## Heap Settings (adjust based on your environment)
+-Xms2g
+-Xmx4g
+-XX:MetaspaceSize=256m
+-XX:MaxMetaspaceSize=512m
+
+## Virtual Threads Optimization (Java 21)
+## No special flags needed - virtual threads work out of the box
+## But these help with monitoring:
+-Djdk.tracePinnedThreads=full
+-Djdk.virtualThreadScheduler.parallelism=8
+
+## GC Logging (recommended for production)
+-Xlog:gc*,gc+age=trace,safepoint:file=logs/gc-%t.log:utctime,pid,tags:filecount=5,filesize=100m
+
+## Performance Tuning
+-XX:+AlwaysPreTouch
+-XX:+UseStringDeduplication
+-XX:+OptimizeStringConcat
+
+## Monitoring & Diagnostics
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:HeapDumpPath=logs/heapdump.hprof
+-XX:+UnlockDiagnosticVMOptions
+-XX:+DebugNonSafepoints
+
+## Notes:
+## 1. For containers, use -XX:+UseContainerSupport (enabled by default in Java 11+)
+## 2. For high-throughput workloads, consider increasing -Xmx
+## 3. For low-latency requirements, switch to ZGC
+## 4. Monitor GC logs and adjust based on your workload
