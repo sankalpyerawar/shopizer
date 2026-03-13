@@ -103,9 +103,9 @@ public class DataConfiguration {
         hibernateProperties.setProperty("hibernate.default_schema", schema);
         hibernateProperties.setProperty("hibernate.dialect", dialect);
         hibernateProperties.setProperty("hibernate.show_sql", showSql);
-        hibernateProperties.setProperty("hibernate.cache.use_second_level_cache", "true");
-        hibernateProperties.setProperty("hibernate.cache.use_query_cache", "true");
-        hibernateProperties.setProperty("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");
+        // Disable second-level cache for now (can be re-enabled with JCache later)
+        hibernateProperties.setProperty("hibernate.cache.use_second_level_cache", "false");
+        hibernateProperties.setProperty("hibernate.cache.use_query_cache", "false");
         hibernateProperties.setProperty("hibernate.connection.CharSet", "utf8");
         hibernateProperties.setProperty("hibernate.connection.characterEncoding", "utf8");
         hibernateProperties.setProperty("hibernate.connection.useUnicode", "true");
